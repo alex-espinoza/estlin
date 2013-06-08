@@ -1,4 +1,7 @@
 Estlin::Application.routes.draw do
+  get "tweet/index"
+
+  root :to => "tweet#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
