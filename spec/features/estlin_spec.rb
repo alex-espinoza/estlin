@@ -7,7 +7,7 @@ require 'spec_helper'
 		t.text = tweet
 		t.save
  		visit "/"
- 		expect(page).to have_content("This is the latest test tweet.")
+ 		expect(page).to have_content("The third tweet.")
  	end
 
  end
