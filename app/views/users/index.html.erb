@@ -10,6 +10,6 @@
 	  Signed in as <%= current_user.nickname %>
 	  <%= link_to "Sign out", signout_path %>
   <% else %>
-	  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+	  <%= link_to "Sign in with Twitter", signin_path %>
   <% end %>
 </div>
