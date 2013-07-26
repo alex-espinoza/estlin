@@ -1,0 +1,15 @@
+<h1>Estlin - Index - Main App Page</h1>
+<p>Find me in app/views/users/index.html.erb</p>
+
+<%= flash[:notice] if flash[:notice] %>
+
+<p>Tweet box and info should go here.</p>
+
+<div id="user_nav">
+  <% if current_user %>
+	  Signed in as <%= current_user.nickname %>
+	  <%= link_to "Sign out", signout_path %>
+  <% else %>
+	  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+  <% end %>
+</div>
