@@ -1,5 +1,5 @@
 class Tweet < ActiveRecord::Base
-  attr_accessible :text, :scheduled_time, :was_tweeted
+  attr_accessible :text, :scheduled_time, :was_tweeted, :user_id
 
   belongs_to :user
 
