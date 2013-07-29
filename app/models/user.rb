@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
 	attr_accessible :uid, :nickname
 
+  has_many :tweets,
+    inverse_of: :user
+
 	validates_presence_of :uid
   validates_presence_of :nickname
 
