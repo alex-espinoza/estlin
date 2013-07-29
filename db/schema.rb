@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130729205725) do
+ActiveRecord::Schema.define(:version => 20130729210518) do
 
   create_table "tweets", :force => true do |t|
     t.text     "text",                              :null => false
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20130729205725) do
     t.datetime "updated_at",                        :null => false
     t.datetime "scheduled_time",                    :null => false
     t.boolean  "was_tweeted",    :default => false, :null => false
-    t.integer  "user_id"
+    t.integer  "user_id",                           :null => false
   end
 
   create_table "users", :force => true do |t|

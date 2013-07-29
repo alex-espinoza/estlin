@@ -6,5 +6,6 @@ class Tweet < ActiveRecord::Base
   validates_presence_of :text
   validates_presence_of :scheduled_time
   validates_presence_of :was_tweeted
+  validates_presence_of :user_id
   validates_length_of :text, :minimum => 1, :maximum => 140
 end
