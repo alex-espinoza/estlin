@@ -27,6 +27,7 @@ group :test, :development do
 	gem 'capybara'
 	gem 'launchy'
 	gem 'dotenv-rails'
+	gem 'timecop'
 end
 
 group :test do
@@ -46,6 +47,7 @@ gem 'jquery-rails'
 gem 'twitter'
 gem 'omniauth-twitter'
 gem 'simple_form'
+gem 'delayed_job_active_record'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
