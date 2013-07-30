@@ -11,6 +11,6 @@ class SessionsController < ApplicationController
   end
 
   def failed
-  	redirect_to root_path, notice: "Authentication with Twitter has failed."
+  	redirect_to root_path, notice: "Authentication with Twitter has failed"
   end
 end

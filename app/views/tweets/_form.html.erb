@@ -1,5 +1,5 @@
 <%= simple_form_for @tweet do |f| %>
-  <%= f.input :text %>
+  <%= f.input :text, :input_html => {:cols => 30, :rows => 6} %>
   <%= f.input :scheduled_time %>
   <%= f.button :submit, "Schedule Tweet" %>
 <% end %>

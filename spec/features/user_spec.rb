@@ -8,12 +8,13 @@ describe 'User' do
 		mock_omniauth_sign_in
 		click_link "Sign in with Twitter"
 		expect(page).to have_content("You have signed in as 'estlintester'")
+		expect(User.all.count).to eq(1)
 	end
 
 	it 'is shown an authentication failed notice if cannot authenticate with twitter.' do
 		OmniAuth.config.mock_auth[:twitter] = :invalid_credentials
 		visit root_path
 		click_link "Sign in with Twitter"
-		expect(page).to have_content("Authentication with Twitter has failed.")
+		expect(page).to have_content("Authentication with Twitter has failed")
 	end
 end
