@@ -4,6 +4,11 @@
 
 <%= render 'form' if current_user %>
 
+<div>
+	Scheduled times are in <strong>UTC/GMT</strong>. The current time is <strong><%= DateTime.now.utc.strftime("%Y %B %e - %H:%M:%S UTC") %></strong>.
+	Please use a <%= link_to "time zone converter", "http://www.timeanddate.com/worldclock/converter.html" %> to accurately schedule the time for your tweet.
+</div>
+
 <div id="user_nav">
   <% if current_user %>
 	  Signed in as <%= current_user.nickname %>
