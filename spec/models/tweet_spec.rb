@@ -5,7 +5,7 @@ describe Tweet do
 	## proven that the validation works. scheduled_time is nil for these tests when it should be
 	## DateTime object like in all other tests.
 
-	# it { should belong_to(:user) }
+	it { should belong_to(:user) }
 
  #  it { should validate_presence_of(:text) }
  #  it { should validate_presence_of(:scheduled_time) }
