@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth(auth)
   	user = User.where(auth.slice("uid")).first || create_from_omniauth(auth)
+    # Below if statement is in case the user's tokens ever change, update them when logging in so we always have most recent
     if user.oauth_token != auth["credentials"]["token"] || user.oauth_token != auth["credentials"]["secret"]
       user.oauth_token = auth["credentials"]["token"]
       user.oauth_secret = auth["credentials"]["secret"]

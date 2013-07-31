@@ -55,7 +55,7 @@ describe 'Tweet' do
 
 	describe '- will be tweeted -' do
 		before(:each) do
-			test_time = Time.utc(2013, 8, 1, 18, 0, 0)
+			test_time = Time.utc(2013, 8, 3, 18, 0, 0)
 			Timecop.freeze(test_time)
 		end
 
@@ -66,11 +66,33 @@ describe 'Tweet' do
 			valid_tweet_form_input
 			expect(Delayed::Job.count).to eq(1)
 			scheduled_time_of_test_tweet = Time.utc(2013, 8, 4, 18, 0, 0)
-			Timecop.freeze(Time.now + 3.days)
 			expect(Tweet.first.scheduled_time).to eq(scheduled_time_of_test_tweet)
-			expect(Tweet.first.scheduled_time).to eq(Time.now)
+			Timecop.travel(Time.now + 5.days)
+			successes, failures = Delayed::Worker.new.work_off
+			expect(successes).to eq(1)
+			expect(failures).to eq(0)
 			expect(Delayed::Job.count).to eq(0)
 			expect(Tweet.first.was_tweeted).to eq(true)
+		end
+	end
+
+	describe '- will not be tweeted -' do
+		before(:each) do
+			test_time = Time.utc(2013, 8, 1, 18, 0, 0)
+			Timecop.freeze(test_time)
+		end
+
+		after(:each) { Timecop.return }
+
+		it 'if the time specified in its scheduled_time column has not yet happened.' do
+			valid_sign_in_via_twitter
+			valid_tweet_form_input
+			expect(Delayed::Job.count).to eq(1)
+			scheduled_time_of_test_tweet = Time.utc(2013, 8, 4, 18, 0, 0)
+			expect(Tweet.first.scheduled_time).to eq(scheduled_time_of_test_tweet)
+			Timecop.travel(Time.now + 2.days)
+			expect(Delayed::Job.count).to eq(1)
+			expect(Tweet.first.was_tweeted).to eq(false)
 		end
 	end
 end

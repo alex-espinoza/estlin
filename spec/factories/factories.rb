@@ -2,6 +2,8 @@ FactoryGirl.define do
 	factory :twitter_user, class: User do
 		uid "1234567"
 		nickname "estlintester"
+		oauth_token "2342kmlskdlakmsdlkasm"
+		oauth_secret "aslsakmdlkm32m3902j"
 	end
 
 	factory :valid_tweet, class: Tweet do

@@ -5,6 +5,10 @@ module OmniauthHelper
 	    :uid => '1234567',
 	    :user_info => {
 	    	:nickname => 'estlintester'
+	  	},
+	  	:credentials => {
+	  		:token => '2342kmlskdlakmsdlkasm',
+	  		:secret => 'aslsakmdlkm32m3902j'
 	  	}
   	})
 	end
