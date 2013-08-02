@@ -11,10 +11,15 @@ Try it out: http://estlin.herokuapp.com
 
 1. Sign up for a twitter developer account: https://dev.twitter.com
 
-2. Create a new twitter application and get your consumer key and consumer secret tokens.
+2. Create a new twitter application.
 
-3. Create a <tt>.env</tt> file in the root directory and add the keys as shown below:
+3. Under your application settings in the twitter developer site, change the following:
+  * Website: http://127.0.0.1:3000/
+  * Application type access: Read and write
+  * Callback URL: http://127.0.0.1:3000/auth/twitter/callback
+
+4. Create a <tt>.env</tt> file in the root directory and add the consumer key and secret tokens found on the application details page as shown below:
        export TWITTER_CONSUMER_KEY=token-goes-here
        export TWITTER_CONSUMER_SECRET=token-goes-here
 
-4. <tt>rails s</tt> and you're good to go.
+5. <tt>rails s</tt> and then <tt>rake jobs:work</tt> to run the delayed_job queue and you're good to go.
