@@ -48,6 +48,7 @@ gem 'twitter'
 gem 'omniauth-twitter'
 gem 'simple_form'
 gem 'delayed_job_active_record'
+gem 'google-analytics-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
