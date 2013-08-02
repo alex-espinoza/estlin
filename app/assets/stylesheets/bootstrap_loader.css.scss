@@ -1,4 +1,33 @@
 @import "bootstrap";
 
+body {
+	background-color: #d63431;
+}
 
 @import "bootstrap-responsive";
+
+.header-wrapper {
+	padding: 20px;
+	text-align: center;
+	h1, h2 {
+		margin: 0;
+	}
+	h1 {
+		color: #fafafa;
+		text-shadow: #000 -1px 1px;
+		font-size: 42px;
+	}
+	h2 {
+		font-size: 18px;
+		font-weight: normal;
+		line-height: 25px;
+		color: #efefef;
+		text-shadow: #000 0 -1px;
+	}
+}
+
+.main-wrapper {
+	padding: 20px;
+	background-color: #eaeaea;
+	box-shadow: -1px 1px 1px #000;
+}

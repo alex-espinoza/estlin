@@ -1,21 +1,30 @@
-<h1>Estlin - Index - Main App Page</h1>
-
-<%= flash[:notice] if flash[:notice] %>
-
-<% if current_user %>
-	<%= render 'form' %>
-
-	<div>
-		Scheduled times are in <strong>UTC/GMT</strong>. The current time is <strong><%= DateTime.now.utc.strftime("%Y %B %e - %H:%M:%S UTC") %></strong>.
-		Please use a <%= link_to "time zone converter", "http://www.timeanddate.com/worldclock/converter.html" %> to accurately schedule the time for your tweet.
+<div class="row-fluid">
+	<div class="header-wrapper span8 offset2">
+		<h1>Estlin</h1>
+		<h2>Schedule a tweet to be posted at a specific time</h2>
 	</div>
-<% end %>
+</div>
 
-<div id="user_nav">
-  <% if current_user %>
-	  Signed in as <%= current_user.nickname %>
-	  <%= link_to "Sign out", signout_path %>
-  <% else %>
-	  <%= link_to "Sign in with Twitter", signin_path %>
-  <% end %>
+<div class="row-fluid">
+	<div class="main-wrapper span8 offset2">
+		<%= flash[:notice] if flash[:notice] %>
+
+		<% if current_user %>
+			<%= render 'form' %>
+
+			<div>
+				Scheduled times are in <strong>UTC/GMT</strong>. The current time is <strong><%= DateTime.now.utc.strftime("%Y %B %e - %H:%M:%S UTC") %></strong>.
+				Please use a <%= link_to "time zone converter", "http://www.timeanddate.com/worldclock/converter.html" %> to accurately schedule the time for your tweet.
+			</div>
+		<% end %>
+
+		<div id="user_nav">
+		  <% if current_user %>
+			  Signed in as <%= current_user.nickname %>
+			  <%= link_to "Sign out", signout_path %>
+		  <% else %>
+			  <%= link_to "Sign in with Twitter", signin_path %>
+		  <% end %>
+		</div>
+	</div>
 </div>
