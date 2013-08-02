@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 body {
-	background-color: #d63431;
+	background-color: #b83c49;
 }
 
 @import "bootstrap-responsive";
@@ -30,4 +30,27 @@ body {
 	padding: 20px;
 	background-color: #eaeaea;
 	box-shadow: -1px 1px 1px #000;
+}
+
+.sign-in-out-button {
+	text-align: center;
+}
+
+.f-button {
+  font: {
+    family: "Lato", sans-serif;
+    size: 16.5px;
+  }
+  display: inline-block;
+  border-radius: 6px;
+  padding: 12px 20px;
+  border: 1px solid #005580;
+  background: #0078a4;
+  color: #fafafa;
+}
+
+.f-button:hover {
+	color: #fff;
+	text-decoration: none;
+  background: #005580;
 }

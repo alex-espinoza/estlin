@@ -19,12 +19,16 @@
 		<% end %>
 
 		<div id="user_nav">
-		  <% if current_user %>
-			  Signed in as <%= current_user.nickname %>
-			  <%= link_to "Sign out", signout_path %>
-		  <% else %>
-			  <%= link_to "Sign in with Twitter", signin_path %>
-		  <% end %>
+			<div class="sign-in-out-button">
+			  <% if current_user %>
+				  Signed in as <%= current_user.nickname %>
+				  <%= link_to "Sign out", signout_path, :class => "f-button" %>
+			  <% else %>
+				  <%= link_to signin_path, :class => "f-button" do %>
+				  	Sign in with <%= image_tag("twitter-icon-28px.png") %> to continue
+				  <% end %>
+			  <% end %>
+			</div>
 		</div>
 	</div>
 </div>
