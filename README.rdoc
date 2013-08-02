@@ -4,6 +4,8 @@ An app that lets you schedule a tweet to be posted at a specific time in the fut
 
 Try it out: http://estlin.herokuapp.com
 
+(note: you can schedule tweets, but they won't be posted since I don't have a running worker on heroku)
+
 
 == Steps to deploy on your own server
 
