@@ -2,12 +2,12 @@
 
 An app that lets you schedule a tweet to be posted at a specific time in the future.
 
-Try it out:
+Try it out: http://estlin.herokuapp.com
 
 
 == Steps to deploy on your own server
 
-1. Sign up for a twitter developer account: https://dev.twitter.com/
+1. Sign up for a twitter developer account: https://dev.twitter.com
 
 2. Create a new twitter application and get your consumer key and consumer secret tokens.
 
