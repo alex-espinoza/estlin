@@ -2,12 +2,14 @@
 
 <%= flash[:notice] if flash[:notice] %>
 
-<%= render 'form' if current_user %>
+<% if current_user %>
+	<%= render 'form' %>
 
-<div>
-	Scheduled times are in <strong>UTC/GMT</strong>. The current time is <strong><%= DateTime.now.utc.strftime("%Y %B %e - %H:%M:%S UTC") %></strong>.
-	Please use a <%= link_to "time zone converter", "http://www.timeanddate.com/worldclock/converter.html" %> to accurately schedule the time for your tweet.
-</div>
+	<div>
+		Scheduled times are in <strong>UTC/GMT</strong>. The current time is <strong><%= DateTime.now.utc.strftime("%Y %B %e - %H:%M:%S UTC") %></strong>.
+		Please use a <%= link_to "time zone converter", "http://www.timeanddate.com/worldclock/converter.html" %> to accurately schedule the time for your tweet.
+	</div>
+<% end %>
 
 <div id="user_nav">
   <% if current_user %>
