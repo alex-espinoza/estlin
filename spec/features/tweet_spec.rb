@@ -6,7 +6,7 @@ describe 'Tweet' do
 	def valid_sign_in_via_twitter
 		visit root_path
 		mock_omniauth_sign_in
-		click_link "Sign in with Twitter"
+		click_link "Sign in with"
 	end
 
 	def valid_tweet_form_input

@@ -7,22 +7,17 @@
 
 <div class="row-fluid">
 	<div class="main-wrapper span8 offset2">
-		<%= flash[:notice] if flash[:notice] %>
-
 		<% if current_user %>
 			<%= render 'form' %>
 
-			<div>
-				Scheduled times are in <strong>UTC/GMT</strong>. The current time is <strong><%= DateTime.now.utc.strftime("%Y %B %e - %H:%M:%S UTC") %></strong>.
-				Please use a <%= link_to "time zone converter", "http://www.timeanddate.com/worldclock/converter.html" %> to accurately schedule the time for your tweet.
-			</div>
+			Scheduled times are in <strong>UTC/GMT</strong>. The current server time is <strong><%= DateTime.now.utc.strftime("%Y %B %e - %H:%M:%S UTC") %></strong>.<br />
+			Please use a <%= link_to "time zone converter", "http://www.timeanddate.com/worldclock/converter.html" %> to accurately schedule the time for your tweet.
 		<% end %>
 
 		<div id="user_nav">
 			<div class="sign-in-out-button">
 			  <% if current_user %>
-				  Signed in as <%= current_user.nickname %>
-				  <%= link_to "Sign out", signout_path, :class => "f-button" %>
+				  <span class="pull-right signed-in-info">Currently signed in as: <strong><%= current_user.nickname %></strong> | <%= link_to "Sign out", signout_path %></span>
 			  <% else %>
 				  <%= link_to signin_path, :class => "f-button" do %>
 				  	Sign in with <%= image_tag("twitter-icon-28px.png") %> to continue

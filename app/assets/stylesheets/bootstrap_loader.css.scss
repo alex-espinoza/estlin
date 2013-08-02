@@ -47,10 +47,31 @@ body {
   border: 1px solid #005580;
   background: #0078a4;
   color: #fafafa;
+  text-shadow: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
 }
 
 .f-button:hover {
 	color: #fff;
 	text-decoration: none;
   background: #005580;
+}
+
+.signed-in-info {
+	margin-top: 20px;
+	font-size: 12px;
+}
+
+textarea {
+	width: auto;
+	height: auto;
+}
+
+label {
+	font-weight: bold;
+}
+
+.alert {
+	margin: 0;
 }
