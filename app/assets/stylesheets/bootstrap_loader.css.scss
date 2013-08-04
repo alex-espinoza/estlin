@@ -50,12 +50,16 @@ body {
   text-shadow: none;
   box-shadow: none;
   -moz-box-shadow: none;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
 }
 
 .f-button:hover {
 	color: #fff;
 	text-decoration: none;
   background: #005580;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
 }
 
 .signed-in-info {
@@ -85,3 +89,17 @@ label {
 		color: inherit;
 	}
 }
+
+#tweet-was-scheduled-notice {
+	padding: 25px;
+	text-align: center;
+	h1 {
+		margin: 0px;
+	}
+	.checkbox {
+		font-size: 100px;
+		color: #17B827;
+		text-shadow: 0px 2px 3px #052909;
+	}
+}
+

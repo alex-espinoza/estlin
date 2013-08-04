@@ -1,6 +1,11 @@
 class TweetsController < ApplicationController
   def index
   	@tweet = Tweet.new
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -10,7 +15,6 @@ class TweetsController < ApplicationController
     respond_to do |format|
     	if @tweet.save
         @tweet.tweet_at_scheduled_time
-        flash[:notice] = "Tweet has been scheduled"
         format.html { render 'index' }
         format.js
     	else

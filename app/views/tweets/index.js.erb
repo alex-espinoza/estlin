@@ -1,0 +1,5 @@
+$("#tweet-was-scheduled-notice").fadeOut("slow", function() {
+  $("#schedule-tweet-form-container").hide().append("<%= j render 'form' %>");
+  $("#schedule-tweet-form-container").fadeIn("slow");
+  return false;
+});

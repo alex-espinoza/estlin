@@ -8,6 +8,12 @@
 <div class="row-fluid">
 	<div class="main-wrapper span8 offset2">
 		<% if current_user %>
+			<div id="tweet-was-scheduled-notice">
+				<span class='checkbox'>&#x2713;</span><br />
+				<h1>Your tweet has been scheduled</h1><br />
+				<%= link_to "Schedule another tweet", root_path, :class => "f-button", :remote => true %>
+			</div>
+
 			<div id="schedule-tweet-form-container">
 				<%= render 'form' %>
 			</div>

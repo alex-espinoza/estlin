@@ -1,6 +1,4 @@
-<% if @tweet.save
-	@tweet = Tweet.new
-%>
+$("#schedule-tweet-form").fadeOut("slow", function() {
 	$("#schedule-tweet-form").remove();
-	$('#schedule-tweet-form-container').append("<%= j render 'form' %>");
-<% end %>
+	$("#tweet-was-scheduled-notice").fadeIn("slow");
+});
