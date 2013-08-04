@@ -1,5 +1,10 @@
-<%= simple_form_for @tweet do |f| %>
-  <%= f.input :text, :input_html => {:cols => 60, :rows => 6} %>
-  <%= f.input :scheduled_time %>
-  <%= f.button :submit, "Schedule Tweet", :class => "f-button" %>
-<% end %>
+<div id="schedule-tweet-form">
+	<%= simple_form_for @tweet, :remote => true do |f| %>
+	  <%= f.input :text, :input_html => {:cols => 60, :rows => 6} %>
+	  <%= f.input :scheduled_time %>
+	  <%= f.button :submit, "Schedule Tweet", :class => "f-button" %>
+	<% end %>
+
+	Scheduled times are in <strong>UTC/GMT</strong>. The current server time is <strong><%= DateTime.now.utc.strftime("%Y %B %e - %H:%M:%S UTC") %></strong>.<br />
+	Please use a <%= link_to "time zone converter", "http://www.timeanddate.com/worldclock/converter.html" %> to accurately schedule the time for your tweet.
+</div>

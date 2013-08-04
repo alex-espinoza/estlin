@@ -7,11 +7,16 @@ class TweetsController < ApplicationController
   	@tweet = Tweet.new(params[:tweet])
   	@tweet.user = current_user
 
-  	if @tweet.save
-      @tweet.tweet_at_scheduled_time
-  		redirect_to root_path, notice: "Tweet has been scheduled"
-  	else
-  		render action: "index"
-  	end
+    respond_to do |format|
+    	if @tweet.save
+        @tweet.tweet_at_scheduled_time
+        flash[:notice] = "Tweet has been scheduled"
+        format.html { render 'index' }
+        format.js
+    	else
+    		format.html { render 'index' }
+        format.js { render 'reload' }
+    	end
+    end
   end
 end

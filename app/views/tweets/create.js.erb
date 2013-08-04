@@ -1,0 +1,6 @@
+<% if @tweet.save
+	@tweet = Tweet.new
+%>
+	$("#schedule-tweet-form").remove();
+	$('#schedule-tweet-form-container').append("<%= j render 'form' %>");
+<% end %>

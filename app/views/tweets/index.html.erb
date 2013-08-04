@@ -8,10 +8,9 @@
 <div class="row-fluid">
 	<div class="main-wrapper span8 offset2">
 		<% if current_user %>
-			<%= render 'form' %>
-
-			Scheduled times are in <strong>UTC/GMT</strong>. The current server time is <strong><%= DateTime.now.utc.strftime("%Y %B %e - %H:%M:%S UTC") %></strong>.<br />
-			Please use a <%= link_to "time zone converter", "http://www.timeanddate.com/worldclock/converter.html" %> to accurately schedule the time for your tweet.
+			<div id="schedule-tweet-form-container">
+				<%= render 'form' %>
+			</div>
 		<% end %>
 
 		<div id="user_nav">
